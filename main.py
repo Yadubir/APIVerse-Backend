@@ -2,8 +2,10 @@
 from fastapi import FastAPI
 from routes import search, integration, health, compose, review, categories
 from fastapi.middleware.cors import CORSMiddleware
+import os
 
 app = FastAPI()
+print("🔧 Using PORT:", os.getenv("PORT"))
 
 # Add this middleware
 app.add_middleware(
